@@ -1,0 +1,1210 @@
+/* Modern Color Scheme and Variables */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #e74c3c;
+    --accent-color: #3498db;
+    --gradient-1: linear-gradient(135deg, #2c3e50, #3498db);
+    --gradient-2: linear-gradient(135deg, #e74c3c, #f39c12);
+    --text-color: #2c3e50;
+    --text-light: #7f8c8d;
+    --light-bg: #f8f9fa;
+    --white: #ffffff;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --border-radius: 12px;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+}
+
+/* Enhanced Navbar Styles */
+#navbar {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem 5%;
+    box-shadow: var(--shadow-sm);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+#logo {
+    float: left;
+    margin-right: 2rem;
+}
+
+#logo h1 {
+    font-size: 1.5rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+#nav-links {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+
+#nav-links a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    position: relative;
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-right: 1rem;
+    display: inline-block;
+}
+
+#nav-links a:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(45deg, #4ECDC4, #FF6B6B);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+#nav-links a.active {
+    background: linear-gradient(45deg, #FF8E53, #FE6B8B);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+#nav-links a i {
+    margin-right: 8px;
+}
+
+#social-icons {
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+#social-icons a {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    transition: var(--transition);
+    position: relative;
+    margin-left: 1.5rem;
+    display: inline-block;
+}
+
+#social-icons a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/* Clearfix for navbar */
+#navbar::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* Hero Section Adjustment */
+#container {
+    padding-top: 2rem;
+}
+
+/* Responsive adjustments for navbar */
+@media (max-width: 768px) {
+    #navbar {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    #logo {
+        float: none;
+        margin: 0 0 1rem 0;
+        display: block;
+    }
+
+    #nav-links {
+        display: block;
+        margin: 1rem 0;
+    }
+
+    #nav-links a {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    #social-icons {
+        float: none;
+        display: block;
+        margin: 1rem 0;
+    }
+
+    #social-icons a {
+        margin: 0 0.75rem;
+    }
+}
+
+/* Enhanced Hero Section */
+#container {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+#container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(231, 76, 60, 0.3), rgba(52, 152, 219, 0.3));
+    animation: gradientShift 10s ease infinite;
+}
+
+#container h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    animation: fadeInDown 1s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+#container h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+#btn {
+    display: inline-block;
+    padding: 1.2rem 2.5rem;
+    background: var(--gradient-2);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: var(--transition);
+    animation: fadeIn 1.5s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-1);
+    transition: var(--transition);
+    z-index: -1;
+    opacity: 0;
+}
+
+#btn:hover::before {
+    opacity: 1;
+}
+
+#btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(231, 76, 60, 0.3);
+}
+
+/* Enhanced Gallery Section */
+#services {
+    padding: 8rem 5%;
+    text-align: center;
+    background: var(--white);
+}
+
+#services h1 {
+    font-size: 3rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+#services h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--gradient-2);
+}
+
+#gallery-grid {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.album-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.album-item:hover {
+    transform: scale(1.03);
+}
+
+.album-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Enhanced About Section */
+#about-section {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+}
+
+#about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+#profile-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#about-content {
+    text-align: center;
+    max-width: 800px;
+}
+
+#about-content h1 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+#about-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Enhanced Services Section */
+#services-section {
+    padding: 8rem 5%;
+    background: var(--white);
+}
+
+#services-section h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+#services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-2);
+    transform: scaleX(0);
+    transition: var(--transition);
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.service-card:hover {
+    transform: translateY(-15px);
+    box-shadow: var(--shadow-lg);
+}
+
+.service-card i {
+    font-size: 3rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1.5rem;
+}
+
+.service-card h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.service-card p {
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+/* Enhanced Contact Section */
+#contact-section {
+    padding: 8rem 5%;
+    background: var(--light-bg);
+    position: relative;
+}
+
+#contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#contact-info h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+#contact-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+#contact-details p {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.1rem;
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+#contact-details p:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+#contact-details i {
+    font-size: 1.8rem;
+    background: var(--gradient-2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+#contact-details a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+#contact-details a:hover {
+    color: var(--secondary-color);
+}
+
+/* Enhanced Footer */
+footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 5rem 5% 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-2);
+}
+
+#footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#footer-about h3, #footer-links h3, #footer-social h3 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+#footer-about h3::after, #footer-links h3::after, #footer-social h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--secondary-color);
+}
+
+#footer-links p {
+    margin-bottom: 1rem;
+}
+
+#footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+#footer-links a:hover {
+    color: var(--secondary-color);
+    transform: translateX(5px);
+}
+
+#social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+#social-links a {
+    color: var(--white);
+    font-size: 1.8rem;
+    transition: var(--transition);
+    position: relative;
+}
+
+#social-links a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-5px);
+}
+
+#copyright {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Enhanced Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 768px) {
+    /* Navbar Mobile Styles */
+    #navbar {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    #logo {
+        float: none;
+        margin: 0 0 1rem 0;
+        display: block;
+    }
+
+    #logo h1 {
+        font-size: 1.2rem;
+    }
+
+    #nav-links {
+        display: block;
+        margin: 1rem 0;
+    }
+
+    #nav-links a {
+        display: block;
+        margin: 0.5rem 0;
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    #social-icons {
+        float: none;
+        display: block;
+        margin: 1rem 0;
+    }
+
+    #social-icons a {
+        margin: 0 0.75rem;
+    }
+
+    /* Hero Section Mobile Styles */
+    #container {
+        height: auto;
+        min-height: 100vh;
+        padding: 6rem 1rem 2rem;
+    }
+
+    #container h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    #container h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    #btn {
+        padding: 0.8rem 1.8rem;
+        font-size: 0.9rem;
+    }
+
+    /* Gallery Section Mobile Styles */
+    #services {
+        padding: 4rem 1rem;
+    }
+
+    #services h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .album-grid {
+        display: block;
+        padding: 0;
+    }
+
+    .album-item {
+        margin-bottom: 1.5rem;
+    }
+
+    .album-item img {
+        height: 250px;
+    }
+
+    /* About Section Mobile Styles */
+    #about-section {
+        padding: 4rem 1rem;
+    }
+
+    #about-container {
+        display: block;
+    }
+
+    #profile-photo {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 2rem;
+    }
+
+    #about-content {
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    #about-content h1 {
+        font-size: 2rem;
+    }
+
+    /* Services Section Mobile Styles */
+    #services-section {
+        padding: 4rem 1rem;
+    }
+
+    #services-section h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    #services-list {
+        display: block;
+    }
+
+    .service-card {
+        margin-bottom: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    /* Contact Section Mobile Styles */
+    #contact-section {
+        padding: 4rem 1rem;
+    }
+
+    #contact-info h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    #contact-details {
+        display: block;
+    }
+
+    #contact-details p {
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+
+    /* Footer Mobile Styles */
+    footer {
+        padding: 3rem 1rem 1rem;
+    }
+
+    #footer-content {
+        display: block;
+    }
+
+    #footer-about,
+    #footer-links,
+    #footer-social {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    #footer-about h3,
+    #footer-links h3,
+    #footer-social h3 {
+        margin-bottom: 1rem;
+    }
+
+    #footer-about h3::after,
+    #footer-links h3::after,
+    #footer-social h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #social-links {
+        justify-content: center;
+    }
+
+    #social-links a {
+        margin: 0 0.75rem;
+    }
+
+    /* Wedding Album Section Mobile Styles */
+    .wedding-album-section {
+        padding: 4rem 1rem;
+    }
+
+    .wedding-album-section h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .album-link {
+        padding: 0.8rem 1.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    #container h1 {
+        font-size: 2rem;
+    }
+
+    #container h2 {
+        font-size: 1.5rem;
+    }
+
+    #btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.8rem;
+    }
+
+    #logo h1 {
+        font-size: 1rem;
+    }
+
+    #nav-links a {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .service-card {
+        padding: 1.2rem;
+    }
+
+    .service-card i {
+        font-size: 2rem;
+    }
+
+    .service-card h2 {
+        font-size: 1.2rem;
+    }
+
+    #profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .album-item img {
+        height: 200px;
+    }
+
+    #contact-details p {
+        font-size: 0.9rem;
+    }
+
+    #contact-details i {
+        font-size: 1.5rem;
+    }
+
+    #social-links a {
+        font-size: 1.5rem;
+    }
+}
+
+/* Landscape Mode */
+@media (max-height: 500px) and (orientation: landscape) {
+    #container {
+        padding-top: 4rem;
+    }
+
+    #container h1 {
+        font-size: 2rem;
+    }
+
+    #container h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    #btn {
+        padding: 0.6rem 1.5rem;
+    }
+
+    #navbar {
+        padding: 0.5rem 1rem;
+    }
+
+    #nav-links a {
+        padding: 0.4rem 0.8rem;
+        margin: 0.3rem 0;
+    }
+}
+
+/* Wedding Album Section Styles */
+.wedding-album-section {
+    padding: 8rem 5%;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.wedding-album-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.05), rgba(52, 152, 219, 0.05));
+    animation: gradientShift 10s ease infinite;
+}
+
+.wedding-album-section h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+}
+
+.wedding-album-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--gradient-2);
+}
+
+.album-item .album-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    color: var(--white);
+    transform: translateY(100%);
+    transition: var(--transition);
+    z-index: 2;
+}
+
+.album-item:hover .album-info {
+    transform: translateY(0);
+}
+
+.album-item .album-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.album-item .album-info p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.album-link {
+    display: inline-block;
+    margin-top: 3rem;
+    padding: 1.2rem 2.5rem;
+    background: var(--gradient-2);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.album-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-1);
+    transition: var(--transition);
+    z-index: -1;
+    opacity: 0;
+}
+
+.album-link:hover::before {
+    opacity: 1;
+}
+
+.album-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(231, 76, 60, 0.3);
+}
+
+/* Album Modal Styles */
+.album-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.album-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transform: scale(0.9);
+    transition: var(--transition);
+}
+
+.album-modal.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    background: var(--white);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    transition: var(--transition);
+    z-index: 2;
+}
+
+.modal-close:hover {
+    background: var(--secondary-color);
+    color: var(--white);
+    transform: rotate(90deg);
+}
+
+/* Album Navigation */
+.album-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    z-index: 2;
+}
+
+.album-nav button {
+    background: var(--white);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    transition: var(--transition);
+    opacity: 0.7;
+}
+
+.album-nav button:hover {
+    background: var(--secondary-color);
+    color: var(--white);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Album Thumbnails */
+.album-thumbnails {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-color) var(--light-bg);
+}
+
+.album-thumbnails::-webkit-scrollbar {
+    height: 6px;
+}
+
+.album-thumbnails::-webkit-scrollbar-track {
+    background: var(--light-bg);
+    border-radius: 3px;
+}
+
+.album-thumbnails::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 3px;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: var(--transition);
+}
+
+.thumbnail:hover,
+.thumbnail.active {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Responsive Styles for Album Section */
+@media (max-width: 768px) {
+    .wedding-album-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .album-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .album-item .album-info {
+        padding: 1.5rem;
+    }
+
+    .album-item .album-info h3 {
+        font-size: 1.3rem;
+    }
+
+    .album-nav {
+        padding: 0 1rem;
+    }
+
+    .album-nav button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .wedding-album-section h2 {
+        font-size: 2rem;
+    }
+
+    .album-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .album-link {
+        padding: 1rem 2rem;
+    }
+
+    .thumbnail {
+        width: 60px;
+        height: 60px;
+    }
+} 
